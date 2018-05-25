@@ -1,14 +1,15 @@
-Summary:	Require deps that the fizzbuzz tests need
-Name:		task-shlomif-fizzbuzz
-Version:	0.0.1
-Release:	%mkrel 1
-License:	BSD
-Group:		System
-Url:		https://github.com/shlomif/fizz-buzz
-BuildArch:	noarch
+Summary:    Require deps that the fizzbuzz tests need
+Name:       task-shlomif-fizzbuzz
+Version:    0.0.1
+Release:    %mkrel 1
+License:    BSD
+Group:      System
+Url:        https://github.com/shlomif/fizz-buzz
+BuildArch:  noarch
 Requires:   hugs98
 Requires:   ocaml
 Requires:   php-cli
+Requires:   ruby
 Requires:   zsh
 %description
 This task package installs some of the packages that fizzbuzz needs.
