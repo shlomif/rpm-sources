@@ -3,7 +3,7 @@
 %define botan2 2
 
 Name:           botan2
-Version:        2.4.0
+Version:        2.6.0
 Release:        %mkrel 1
 Summary:        Crypto and TLS for C++11
 Group:          System/Libraries
