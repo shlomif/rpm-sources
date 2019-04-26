@@ -2,7 +2,7 @@ Summary:	Require basic things that Shlomi Fish needs.
 Name:		task-shlomif
 Version:	0.2.0
 Release:	%mkrel 1
-License:	BSD
+License:	MIT
 Group:		System
 Url:		http://www.shlomifish.org/
 BuildArch:	noarch
@@ -28,6 +28,9 @@ Requires:   lib64sasl2-plug-scram
 Requires:   lib64sasl2-plug-sqlite3
 Requires:   lib64sasl2-plug-srp
 Requires:   lib64sasl2_3
+Requires:   python2-pynvim
+Requires:   python3-pynvim
+Requires:   python3-neovim-remote
 %description
 This task package installs some of the packages that Shlomi Fish needs.
 
