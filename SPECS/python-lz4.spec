@@ -2,7 +2,7 @@
 %global pypi_name lz4
 
 Name:           python-%{pypi_name}
-Version:        2.1.6
+Version:        2.1.10
 Release:        %mkrel 1
 Summary:        LZ4 Bindings for Python
 Group:          Development/Python
@@ -51,7 +51,7 @@ rm -rf %{pypi_name}.egg-info
 %build
 %py3_build
 # generate html docs
-# PYTHONPATH=${PWD} sphinx-build-3 docs html
+PYTHONPATH=${PWD} sphinx-build-3 docs html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
 
@@ -68,5 +68,5 @@ rm -rf html/.{doctrees,buildinfo}
 %{python3_sitearch}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
-#doc html
+%doc html
 %license docs/license.rst LICENSE

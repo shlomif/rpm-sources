@@ -2,7 +2,7 @@
 %global pypi_name sphinx-bootstrap-theme
 
 Name:           python-%{pypi_name}
-Version:        0.6.5
+Version:        0.7.1
 Release:        %mkrel 1
 Summary:        Sphinx Bootstrap Theme
 Group:          Development/Python
@@ -47,6 +47,6 @@ rm -rf %{pypi_name}.egg-info
 
 %files -n python3-%{pypi_name}
 %license LICENSE.txt
-%doc README.rst README.txt
+%doc README.txt README.rst
 %{python3_sitelib}/sphinx_bootstrap_theme
 %{python3_sitelib}/sphinx_bootstrap_theme-%{version}-py?.?.egg-info

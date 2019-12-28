@@ -10,9 +10,9 @@ License:        MIT License
 URL:            https://github.com/crossbario/txaio
 Source0:        https://files.pythonhosted.org/packages/source/t/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
-
+ 
 BuildRequires:  python3-devel
-BuildRequires:  python3dist(mock)
+BuildRequires:  python3dist(mock) = 1.3.0
 BuildRequires:  python3dist(pep8) >= 1.6.2
 BuildRequires:  python3dist(pyenchant) >= 1.6.6
 BuildRequires:  python3dist(pytest) >= 2.6.4
@@ -42,7 +42,7 @@ compatibility*). In other words: your *users* can choose if they want asyncio
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
-
+ 
 Requires:       python3dist(six)
 Requires:       python3dist(twisted) >= 12.1.0
 Requires:       python3dist(twisted) >= 12.1.0

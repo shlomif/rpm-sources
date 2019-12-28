@@ -2,13 +2,13 @@
 %global pypi_name snappy
 
 Name:           python-%{pypi_name}
-Version:        2.6.1
+Version:        2.7
 Release:        %mkrel 1
 Summary:        Studying the topology and geometry of 3-manifolds, with a focus on hyperbolic structures
 Group:          Development/Python
 License:        GPLv2+
 URL:            http://snappy.computop.org
-Source0:        https://files.pythonhosted.org/packages/source/s/%{pypi_name}/%{pypi_name}-%{version}.post1.tar.gz
+Source0:        https://files.pythonhosted.org/packages/source/s/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
  
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(cypari) >= 2.2
@@ -64,15 +64,15 @@ rm -rf %{pypi_name}.egg-info
 %{__python3} setup.py test
 
 %files -n python3-%{pypi_name}
-%license python/togl/win32VC-x86_64-tk8.6/Togl2.1/LICENSE python/togl/darwin-tk8.5/Togl2.1/LICENSE python/togl/linux2-tk8.6/Togl2.0/LICENSE python/togl/win32VC-tk8.6/Togl2.1/LICENSE python/togl/darwin-tk8.4/Togl2.0/LICENSE python/togl/linux2-x86_64-tk8.6/Togl2.0/LICENSE python/togl/win32VC-x86_64-tk8.5/Togl2.1/LICENSE python/togl/linux2-tk8.5/Togl2.0/LICENSE python/togl/darwin-tk8.6/Togl2.1/LICENSE python/togl/darwin-tk8.7/Togl2.1/LICENSE python/togl/win32VC-tk8.5/Togl2.1/LICENSE python/togl/linux2-tk8.4/Togl2.0/LICENSE python/togl/win32-tk8.5/Togl2.0/LICENSE python/togl/linux2-x86_64-tk8.5/Togl2.0/LICENSE python/togl/linux2-x86_64-tk8.4/Togl2.0/LICENSE
+%license python/togl/darwin-tk8.4/Togl2.0/LICENSE python/togl/linux2-x86_64-tk8.5/Togl2.0/LICENSE python/togl/win32VC-tk8.5/Togl2.1/LICENSE python/togl/linux2-x86_64-tk8.4/Togl2.0/LICENSE python/togl/win32VC-x86_64-tk8.6/Togl2.1/LICENSE python/togl/darwin-tk8.7/Togl2.1/LICENSE python/togl/linux2-tk8.5/Togl2.0/LICENSE python/togl/linux2-x86_64-tk8.6/Togl2.0/LICENSE python/togl/win32VC-x86_64-tk8.5/Togl2.1/LICENSE python/togl/win32-tk8.5/Togl2.0/LICENSE python/togl/darwin-tk8.6/Togl2.1/LICENSE python/togl/linux2-tk8.6/Togl2.0/LICENSE python/togl/linux2-tk8.4/Togl2.0/LICENSE python/togl/win32VC-tk8.6/Togl2.1/LICENSE python/togl/darwin-tk8.5/Togl2.1/LICENSE
 %doc README.rst
 %{_bindir}/SnapPy
 %{python3_sitearch}/%{pypi_name}
 %{python3_sitearch}/snappy/dev
-%{python3_sitearch}/snappy/dev/peripheral
 %{python3_sitearch}/snappy/manifolds
 %{python3_sitearch}/snappy/ptolemy
 %{python3_sitearch}/snappy/snap
+%{python3_sitearch}/snappy/snap/peripheral
 %{python3_sitearch}/snappy/snap/t3mlite
 %{python3_sitearch}/snappy/togl
 %{python3_sitearch}/snappy/twister

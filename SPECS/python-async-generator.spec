@@ -38,7 +38,7 @@ rm -rf %{pypi_name}.egg-info
 %build
 %py3_build
 # generate html docs
-# PYTHONPATH=${PWD} sphinx-build-3 docs/source html
+PYTHONPATH=${PWD} sphinx-build-3 docs/source html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
 
@@ -55,5 +55,5 @@ rm -rf html/.{doctrees,buildinfo}
 %{python3_sitelib}/async_generator-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
-#doc html
+%doc html
 %license LICENSE.MIT LICENSE LICENSE.APACHE2

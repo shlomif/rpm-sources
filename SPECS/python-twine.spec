@@ -2,7 +2,7 @@
 %global pypi_name twine
 
 Name:           python-%{pypi_name}
-Version:        1.12.1
+Version:        1.13.0
 Release:        %mkrel 1
 Summary:        Collection of utilities for publishing packages on PyPI
 Group:          Development/Python
@@ -14,8 +14,10 @@ BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildConflicts: python3dist(requests) = 2.15
 BuildConflicts: python3dist(requests) = 2.16
+BuildConflicts: python3dist(requests-toolbelt) = 0.9.0
 BuildRequires:  python3dist(keyring)
 BuildRequires:  python3dist(pkginfo) >= 1.4.2
+BuildRequires:  python3dist(pyblake2)
 BuildRequires:  python3dist(readme-renderer) >= 21.0
 BuildRequires:  python3dist(requests) >= 2.5.0
 BuildRequires:  python3dist(requests-toolbelt) >= 0.8.0
@@ -25,12 +27,12 @@ BuildRequires:  python3dist(tqdm) >= 4.14
 BuildRequires:  python3dist(sphinx)
 
 %description
-.. rtd-inclusion-marker-do-not-removeTwine is a utility_ for publishing_ Python
-packages on PyPI_.It provides build system independent uploads of source and
-binary distribution artifacts <distributions>_ for both new and existing
+twine .. rtd-inclusion-marker-do-not-removeTwine is a utility_ for publishing_
+Python packages on PyPI_.It provides build system independent uploads of source
+and binary distribution artifacts <distributions>_ for both new and existing
 projects_. Why Should I Use This? -The goal of twine is to improve PyPI
 interaction by improving security and testability.The biggest reason to use
-twine is that it...
+twine is...
 
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
@@ -38,8 +40,10 @@ Summary:        %{summary}
  
 Conflicts:      python3dist(requests) = 2.15
 Conflicts:      python3dist(requests) = 2.16
+Conflicts:      python3dist(requests-toolbelt) = 0.9.0
 Requires:       python3dist(keyring)
 Requires:       python3dist(pkginfo) >= 1.4.2
+Requires:       python3dist(pyblake2)
 Requires:       python3dist(readme-renderer) >= 21.0
 Requires:       python3dist(requests) >= 2.5.0
 Requires:       python3dist(requests-toolbelt) >= 0.8.0
@@ -47,12 +51,12 @@ Requires:       python3dist(setuptools)
 Requires:       python3dist(setuptools) >= 0.7.0
 Requires:       python3dist(tqdm) >= 4.14
 %description -n python3-%{pypi_name}
-.. rtd-inclusion-marker-do-not-removeTwine is a utility_ for publishing_ Python
-packages on PyPI_.It provides build system independent uploads of source and
-binary distribution artifacts <distributions>_ for both new and existing
+twine .. rtd-inclusion-marker-do-not-removeTwine is a utility_ for publishing_
+Python packages on PyPI_.It provides build system independent uploads of source
+and binary distribution artifacts <distributions>_ for both new and existing
 projects_. Why Should I Use This? -The goal of twine is to improve PyPI
 interaction by improving security and testability.The biggest reason to use
-twine is that it...
+twine is...
 
 %package -n python-%{pypi_name}-doc
 Summary:        twine documentation
@@ -66,6 +70,8 @@ rm -rf %{pypi_name}.egg-info
 
 %build
 %py3_build
+# generate html docs
+PYTHONPATH=${PWD} sphinx-build-3 docs html
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
 
@@ -83,4 +89,5 @@ rm -rf html/.{doctrees,buildinfo}
 %{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
+%doc html
 %license LICENSE
