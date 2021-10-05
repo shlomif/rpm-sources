@@ -7,21 +7,17 @@ Summary:    The Mersenne Twister PRNG
 Source:     http://search.cpan.org/CPAN/authors/id/F/FA/FANGLY/Math-Random-MT-%{version}.tar.gz
 Url:        http://metacpan.org/release/Math-Random-MT
 Requires:  perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
-Requires: perl(ExtUtils::MakeMaker)
-Requires: perl(Test::More)
-Requires: perl(Test::Number::Delta)
 
 BuildRequires: coreutils
 BuildRequires: findutils
 BuildRequires: gcc
 BuildRequires: make
 BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(Test::More)
+BuildRequires: perl(Test::Number::Delta)
 BuildRequires: perl-devel
 BuildRequires: perl-generators
 BuildRequires: perl-interpreter
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Test::Number::Delta)
 
 %description
 The Mersenne Twister is a pseudorandom number generator developed by Makoto
