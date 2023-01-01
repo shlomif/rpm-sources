@@ -1,6 +1,6 @@
 # Created by pyp2rpm-3.3.8
 %global pypi_name primesieve
-%global pypi_version 2.3.1
+%global pypi_version 2.3.2
 
 Name:           python-%{pypi_name}
 Version:        %{pypi_version}
