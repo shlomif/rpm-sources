@@ -4,8 +4,9 @@ Release:        1%{?dist}
 Summary:        Determine if files should be updated using make-like syntax
 License:        MIT
 URL:            https://metacpan.org/dist/File-ShouldUpdate
-Source0:        http://www.cpan.org/authors/id/S/SH/SHLOMIF/File-ShouldUpdate-%{version}.tar.gz
+Source0:        https://cpan.metacpan.org/modules/by-module/File/File-ShouldUpdate-%{version}.tar.gz
 BuildArch:      noarch
+BuildRequires:  coreutils
 BuildRequires:  perl-generators
 BuildRequires:  perl-interpreter
 BuildRequires:  perl(:VERSION) >= 5.6.0
@@ -45,10 +46,10 @@ perl Build.PL --installdirs=vendor
 ./Build test
 
 %files
-%doc Changes README weaver.ini
+%doc Changes README
 %license LICENSE
-%{perl_vendorlib}/*
-%{_mandir}/man3/*
+%{perl_vendorlib}/File/
+%{_mandir}/man3/File::ShouldUpdate.3pm*
 
 %changelog
 * Thu Jul 17 2025 Shlomi Fish <shlomif@shlomifish.org> 0.2.1-1
