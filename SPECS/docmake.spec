@@ -1,4 +1,4 @@
-Name:           docmake
+Name:           perl-App-XML-DocBook-Builder
 Version:        0.1101
 Release:        1%{?dist}
 Summary:        Command-line utility to build DocBook documents
@@ -36,15 +36,15 @@ tools. It aims to be a saner replacement, written in Perl, for xmlto, which is
 written in Unix shell.
 
 %prep
-%setup -q -n App-XML-DocBook-Builder-%{version}
+%autosetup -n App-XML-DocBook-Builder-%{version}
 
 %build
 perl Build.PL --installdirs=vendor
 ./Build
 
 %install
-./Build install --destdir=$RPM_BUILD_ROOT --create_packlist=0
-%{_fixperms} $RPM_BUILD_ROOT/*
+./Build install --destdir="%{buildroot}" --create_packlist=0
+%{_fixperms} "%{buildroot}"/*
 
 %check
 ./Build test
