@@ -46,7 +46,7 @@ perl Build.PL --installdirs=vendor
 ./Build test
 
 %files
-%doc Changes README
+%doc Changes README weaver.ini
 %license LICENSE
 %{perl_vendorlib}/File/
 %{_mandir}/man3/File::ShouldUpdate.3pm*
