@@ -38,6 +38,15 @@ written in Unix shell.
 %prep
 %autosetup -n App-XML-DocBook-Builder-%{version}
 
+%package -n docmake
+Summary:        Command-line utility to build DocBook documents
+
+%description -n docmake
+Docmake is a command line tool to translate DocBook/XML code into various
+resultant formats such as XHTML, RTF, PDF and XSL-FO, using the more low-level
+tools. It aims to be a saner replacement, written in Perl, for xmlto, which is
+written in Unix shell.
+
 %build
 perl Build.PL --installdirs=vendor
 ./Build
@@ -52,10 +61,14 @@ perl Build.PL --installdirs=vendor
 %files
 %doc Changes README
 %license COPYING
-%{_bindir}/docmake
 %{perl_vendorlib}/App/
-%{_mandir}/man1/docmake.1*
 %{_mandir}/man3/App*.3pm*
+
+%files -n docmake
+%doc Changes README
+%license COPYING
+%{_bindir}/docmake
+%{_mandir}/man1/docmake.1*
 
 %changelog
 * Thu Jul 17 2025 Shlomi Fish <shlomif@shlomifish.org> 0.1101-1
