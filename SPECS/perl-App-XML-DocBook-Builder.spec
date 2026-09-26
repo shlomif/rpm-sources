@@ -1,7 +1,7 @@
 Name:           perl-App-XML-DocBook-Builder
 Version:        0.1101
 Release:        1%{?dist}
-Summary:        Command-line utility to build DocBook documents
+Summary:        Dependencies of docmake
 License:        MIT
 URL:            https://metacpan.org/dist/App-XML-DocBook-Builder
 Source0:        https://cpan.metacpan.org/modules/by-module/App/App-XML-DocBook-Builder-%{version}.tar.gz
@@ -30,10 +30,8 @@ BuildRequires:  perl(warnings)
 Requires:       perl(File::ShouldUpdate) >= 0.2.0
 
 %description
-Docmake is a command line tool to translate DocBook/XML code into various
-resultant formats such as XHTML, RTF, PDF and XSL-FO, using the more low-level
-tools. It aims to be a saner replacement, written in Perl, for xmlto, which is
-written in Unix shell.
+Perl modules which are used by Docmake, a command line tool to translate
+DocBook/XML code into various resultant formats.
 
 %prep
 %autosetup -n App-XML-DocBook-Builder-%{version}
